@@ -20,19 +20,5 @@ public class btnColorPick : MonoBehaviour {
 	{
 		slidePanel.SetHeightPosition(height);
 		slidePanel.animator.SetBool("isShow", !slidePanel.animator.GetBool("isShow"));
-		LoadColors();
-
-	}
-	private void LoadColors()
-	{
-		foreach (Color col in colors)
-		{
-			ImagePrefab imageObj = Instantiate(imgPref);
-			Image img = imageObj.GetComponent<Image>();
-			img.sprite = sprite;			
-			img.color = col;
-			imageObj.GetComponent<RectTransform>().anchoredPosition = rectTr.anchoredPosition;
-			imageObj.transform.SetParent(slidePanel.transform);
-		}
 	}
 }
