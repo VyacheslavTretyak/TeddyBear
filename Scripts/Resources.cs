@@ -25,18 +25,22 @@ public class Resources : MonoBehaviour
 	}
 	private void Update()
 	{
-		if (slidePanel.triggerAfrerHide)
+		if (slidePanel.triggerAfterHide)
 		{
+			if (resours == null)
+			{
+				slidePanel.triggerAfterHide = false;
+			}
 			foreach (ResoursPlace item in resours)
 			{
 				GameObject.Destroy(item.gameObject);
 			}
 			resours = null;
-			slidePanel.triggerAfrerHide = false;
+			slidePanel.triggerAfterHide = false;
 		}
 	}
 	internal void ButtonClick(GameObject btn)
-	{
+	{		
 		switch (btn.name)
 		{
 			case "btnColorPick":
@@ -56,7 +60,7 @@ public class Resources : MonoBehaviour
 	}
 	private void GetColorRes(float height)
 	{		
-		if (!slidePanel.IsOpened)
+		if (!slidePanel.IsOpened && resours==null)
 		{
 			resours = new ResoursPlace[bodyColors.Length];
 			for (int i = 0; i < bodyColors.Length; i++)
@@ -80,7 +84,7 @@ public class Resources : MonoBehaviour
 	}
 	private void GetEarsRes(float height)
 	{
-		if (!slidePanel.IsOpened)
+		if (!slidePanel.IsOpened && resours == null)
 		{
 			resours = new ResoursPlace[ears.Length];
 			for (int i = 0; i < ears.Length; i++)
@@ -103,7 +107,7 @@ public class Resources : MonoBehaviour
 	}
 	private void GetEyesRes(float height)
 	{
-		if (!slidePanel.IsOpened)
+		if (!slidePanel.IsOpened && resours == null)
 		{
 			resours = new ResoursPlace[eyes.Length];
 			for (int i = 0; i < eyes.Length; i++)
@@ -126,7 +130,7 @@ public class Resources : MonoBehaviour
 	}
 	private void GetBowsRes(float height)
 	{
-		if (!slidePanel.IsOpened)
+		if (!slidePanel.IsOpened && resours == null)
 		{
 			resours = new ResoursPlace[bows.Length];
 			for (int i = 0; i < bows.Length; i++)

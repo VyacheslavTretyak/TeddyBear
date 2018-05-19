@@ -8,7 +8,7 @@ public class SlidePanel : MonoBehaviour {
 	[HideInInspector]
 	public bool IsOpened { get; set; }
 	public bool triggerAfrerOpen = false;
-	public bool triggerAfrerHide = false;
+	public bool triggerAfterHide = false;
 	private RectTransform rectTr;
 	[HideInInspector]
 	public RectTransform backPanelRect;
@@ -40,6 +40,6 @@ public class SlidePanel : MonoBehaviour {
 	}
 	public void AfterHide()
 	{
-		triggerAfrerHide = true;
+		triggerAfterHide = true;
 	}
 }
